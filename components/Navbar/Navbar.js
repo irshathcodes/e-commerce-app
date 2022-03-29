@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "./navbar.module.css";
+import styles from "./Navbar.module.css";
 import classNames from "classnames/bind";
 import Image from "next/image";
 import { ShoppingBagIcon, MenuIcon, XIcon } from "@heroicons/react/outline";

@@ -1,0 +1,23 @@
+.image_wrapper {
+	position: relative;
+	width: 300px;
+	height: 400px;
+	box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.image {
+	border-radius: 0.5rem;
+}
+
+.product_details {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background-color: #fff;
+	padding: 0.5rem 0;
+	padding-left: 0.5rem;
+}
+
+.product_details > h3 {
+	font-weight: 500;
+}

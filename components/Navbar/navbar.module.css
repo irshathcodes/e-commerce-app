@@ -3,6 +3,7 @@
 	width: 80%;
 	position: sticky;
 	top: 0;
+	z-index: 9999;
 }
 
 .nav {
@@ -16,7 +17,6 @@
 	display: flex;
 	align-items: flex-end;
 	gap: 0.2rem;
-	margin-left: 0.5rem;
 }
 
 .brand_container > h1 {
@@ -63,6 +63,9 @@
 	.icon_size {
 		width: 2rem;
 		height: 2rem;
+	}
+	.brand_container {
+		margin-left: 0.5rem;
 	}
 	.nav_links_container {
 		position: absolute;

@@ -21,3 +21,12 @@ html {
 		font-family: "Inter var", sans-serif;
 	}
 }
+
+.underline {
+	padding: 0.2rem 2.5rem;
+	width: fit-content;
+	background: var(--cyan-700);
+	margin-bottom: 2rem;
+	margin-inline: auto;
+	border-radius: 1rem;
+}
