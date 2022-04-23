@@ -4,7 +4,7 @@ import Image from "next/image";
 function Card({ item, className }) {
 	return (
 		<>
-			<div className={`${styles.image_wrapper} ${className}`} key={item.id}>
+			<div className={`${styles.image_wrapper} ${className}`}>
 				<Image
 					className={styles.image}
 					src={item.url}

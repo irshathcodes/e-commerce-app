@@ -32,7 +32,7 @@ function ProductsOverview() {
 
 				<div className={styles.image_container}>
 					{featuredProducts.map((item) => {
-						return <Card item={item} />;
+						return <Card item={item} key={item.id} />;
 					})}
 				</div>
 			</section>
