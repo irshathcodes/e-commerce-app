@@ -35,6 +35,9 @@ function ProductsOverview() {
 						return <Card item={item} key={item.id} />;
 					})}
 				</div>
+				<div className={styles.btn_container}>
+					<button>View All</button>
+				</div>
 			</section>
 		</>
 	);
