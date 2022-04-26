@@ -1,0 +1,52 @@
+.intro {
+	margin: 2rem auto;
+	width: 80%;
+}
+
+.img_container {
+	position: relative;
+	display: flex;
+}
+
+.img_wrapper {
+	position: relative;
+	width: 100%;
+	height: 600px;
+}
+
+.image {
+	object-fit: cover;
+	object-position: top;
+}
+
+.intro_text {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	padding: 1rem 0;
+	background-color: rgb(0, 0, 0, 0.5);
+}
+
+.img_container h2 {
+	font-weight: 700;
+	font-size: 1.5rem;
+	letter-spacing: -0.02em;
+	color: #ffffff;
+}
+
+.img_container p {
+	color: var(--gray-300);
+}
+
+@media (max-width: 650px) {
+	.intro {
+		width: 95%;
+	}
+	.intro_text {
+		padding-inline: 1rem;
+	}
+	.shirt_img {
+		display: none;
+	}
+}
