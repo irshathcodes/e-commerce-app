@@ -1,11 +1,93 @@
 .section {
-	width: 95%;
-	margin-inline: auto;
+	display: flex;
+	justify-content: center;
+	gap: 2rem;
 }
 
-.section > h1 {
-	text-align: center;
+.image_container {
+	position: relative;
+	width: 350px;
+	height: 400px;
+}
+.image {
+	object-fit: cover;
+}
+
+.about_text {
+	width: 40%;
+}
+
+.about_text > h1 {
 	font-size: 1.5rem;
 	letter-spacing: -0.05em;
 	font-weight: 700;
+	margin-top: 1.5rem;
+	margin-bottom: 1rem;
+}
+
+.about_text > p {
+	line-height: 1.8rem;
+}
+
+@media (max-width: 900px) {
+	.image_container {
+		display: none;
+	}
+	.about_text {
+		width: 70%;
+	}
+}
+
+@media (max-width: 550px) {
+	.about_text {
+		width: 90%;
+	}
+}
+
+/* NewsLetter */
+
+.newsletter {
+	text-align: center;
+	margin: 2rem 0;
+}
+
+.newsletter > h3 {
+	font-size: 1.4rem;
+	font-weight: 700;
+	margin-bottom: 0.3rem;
+}
+
+.newsletter > p {
+	font-weight: 500;
+}
+
+.textbox_wrapper {
+	margin: 1rem;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 20rem;
+}
+
+.textbox_wrapper > input {
+	width: 50%;
+	border: 2px solid var(--cyan-600);
+	padding: 0.3rem 0.5rem;
+	border-radius: 0.3rem;
+}
+.textbox_wrapper > input:focus {
+	outline-color: var(--cyan-600);
+}
+
+.textbox_wrapper > button {
+	background: var(--cyan-700);
+	padding: 0.3rem 0.8rem;
+	border-radius: 0.3rem;
+	color: #fff;
+	margin-left: -0.5rem;
+}
+
+@media (max-width: 850px) {
+	.textbox_wrapper > input {
+		width: 80%;
+	}
 }
