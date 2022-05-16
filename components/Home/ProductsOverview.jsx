@@ -1,23 +1,24 @@
 import Image from "next/image";
 import styles from "./ProductsOverview.module.css";
 import Card from "../../ui/Card";
+import Link from "next/link";
 
 const featuredProducts = [
 	{
 		id: 1,
-		url: "/t-shirt.jfif",
+		productImage: "/t-shirt.jfif",
 		name: "Regular Fit Round-neck T-shirt",
 		price: 399,
 	},
 	{
 		id: 2,
-		url: "/hoodie.jfif",
+		productImage: "/hoodie.jfif",
 		name: "Relaxed Fit Hoodie",
 		price: 2299,
 	},
 	{
 		id: 3,
-		url: "/shirt.jfif",
+		productImage: "/shirt.jfif",
 		name: "Regular Fit Resort shirt",
 		price: 799,
 	},
@@ -36,7 +37,9 @@ function ProductsOverview() {
 					})}
 				</div>
 				<div className={styles.btn_container}>
-					<button>View All</button>
+					<Link href="/products">
+						<button>View All</button>
+					</Link>
 				</div>
 			</section>
 		</>

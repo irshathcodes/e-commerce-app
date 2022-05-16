@@ -1,13 +1,13 @@
 import styles from "./Card.module.css";
 import Image from "next/image";
 
-function Card({ item, className }) {
+function Card({ item, className, attributes }) {
 	return (
 		<>
-			<div className={`${styles.image_wrapper} ${className}`}>
+			<div className={`${styles.image_wrapper} ${className}`} {...attributes}>
 				<Image
 					className={styles.image}
-					src={item.url}
+					src={item.productImage}
 					layout={"fill"}
 					objectFit={"cover"}
 					objectPosition={"bottom"}
