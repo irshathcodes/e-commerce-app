@@ -2,20 +2,24 @@ import { useState } from "react";
 import styles from "./Navbar.module.css";
 import classNames from "classnames/bind";
 import Image from "next/image";
+import Link from "next/link";
 import { ShoppingBagIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 
 const navLinks = [
 	{
 		id: 1,
 		name: "T-Shirts",
+		link: "t-shirts and tanks",
 	},
 	{
 		id: 2,
 		name: "Hoodies",
+		link: "hoodies",
 	},
 	{
 		id: 3,
 		name: "Shirts",
+		link: "shirts",
 	},
 ];
 
@@ -33,8 +37,10 @@ function Navbar() {
 				</div>
 
 				<ul className={cn("nav_links_container", { show_nav: showNav })}>
-					{navLinks.map(({ name, id }) => (
-						<li key={id}>{name}</li>
+					{navLinks.map(({ name, id, link }) => (
+						<Link href={`/products?category=${link}`} key={id}>
+							<li>{name}</li>
+						</Link>
 					))}
 				</ul>
 
