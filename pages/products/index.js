@@ -1,17 +1,13 @@
 import ProductList from "../../components/Products/productList";
 
 function Products({ allProducts }) {
-	return <ProductList allProducts={allProducts} categories={categories} />;
+	return <ProductList allProducts={allProducts} />;
 }
 
 export default Products;
 
-export async function getServerSideProps({ query }) {
-	let url = "https://ecommercenode-api.herokuapp.com/api/v1/products";
-
-	if (query.category) {
-		url = `https://ecommercenode-api.herokuapp.com/api/v1/products?category=${query.category}`;
-	}
+export async function getServerSideProps({ resolvedUrl }) {
+	const url = `https://ecommercenode-api.herokuapp.com/api/v1${resolvedUrl}`;
 
 	const res = await fetch(url);
 	const allProducts = await res.json();

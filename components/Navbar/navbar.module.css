@@ -1,12 +1,18 @@
 .center_content {
-	margin-inline: auto;
-	width: 80%;
 	position: sticky;
 	top: 0;
 	z-index: 9999;
+	transition: background-color 300ms ease;
+}
+
+.nav_scrolled {
+	background-color: rgb(209, 213, 219, 0.5);
+	backdrop-filter: blur(3px);
 }
 
 .nav {
+	width: 80%;
+	margin-inline: auto;
 	padding: 0.5rem 0;
 	display: flex;
 	align-items: center;
@@ -30,8 +36,15 @@
 	gap: 3rem;
 }
 
-.nav_links_container > li {
-	font-weight: 500;
+.nav_links {
+	font-weight: 450;
+	color: var(--gray-900);
+	padding: 0.5rem;
+	border-radius: 0.3rem;
+}
+
+.nav_links:hover {
+	background: rgb(209, 213, 219, 0.5);
 }
 
 .icon_size {
@@ -50,7 +63,7 @@
 }
 
 @media (max-width: 650px) {
-	.center_content {
+	.nav {
 		width: 100%;
 	}
 	.menu_icon {

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./Navbar.module.css";
 import classNames from "classnames/bind";
 import Image from "next/image";
@@ -25,21 +25,41 @@ const navLinks = [
 
 function Navbar() {
 	const [showNav, setShowNav] = useState(false);
+	const [changeNavColor, setChangeNavColor] = useState(false);
 
 	const cn = classNames.bind(styles);
 
+	useEffect(() => {
+		window.addEventListener("scroll", () => {
+			if (window.scrollY > 56) {
+				setChangeNavColor(true);
+			} else {
+				setChangeNavColor(false);
+			}
+		});
+	}, []);
+
 	return (
-		<header className={cn("center_content")}>
+		<header className={cn("center_content", { nav_scrolled: changeNavColor })}>
 			<nav className={cn("nav")}>
-				<div className={cn("brand_container")}>
-					<Image src={"/brand_logo.png"} width={40} height={40} />
-					<h1>Cloth Zone</h1>
-				</div>
+				<Link href="/">
+					<a>
+						<div className={cn("brand_container")}>
+							<Image src={"/brand_logo.png"} width={40} height={40} />
+							<h1>Cloth Zone</h1>
+						</div>
+					</a>
+				</Link>
 
 				<ul className={cn("nav_links_container", { show_nav: showNav })}>
 					{navLinks.map(({ name, id, link }) => (
-						<Link href={`/products?category=${link}`} key={id}>
-							<li>{name}</li>
+						<Link
+							href={{ pathname: "/products", query: { category: link } }}
+							key={id}
+						>
+							<a>
+								<li className={cn("nav_links")}>{name}</li>
+							</a>
 						</Link>
 					))}
 				</ul>
