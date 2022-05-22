@@ -2,7 +2,7 @@
 	position: sticky;
 	top: 0;
 	z-index: 9999;
-	transition: background-color 300ms ease;
+	transition: background-color 500ms ease;
 }
 
 .nav_scrolled {
@@ -13,7 +13,7 @@
 .nav {
 	width: 80%;
 	margin-inline: auto;
-	padding: 0.5rem 0;
+	padding: 0.4rem 0;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -23,6 +23,11 @@
 	display: flex;
 	align-items: flex-end;
 	gap: 0.2rem;
+	transition: opacity 300ms ease;
+}
+
+.brand_container:hover {
+	opacity: 0.8;
 }
 
 .brand_container > h1 {
@@ -38,13 +43,14 @@
 
 .nav_links {
 	font-weight: 450;
-	color: var(--gray-900);
-	padding: 0.5rem;
 	border-radius: 0.3rem;
+	border: 2px solid transparent;
+	padding-bottom: 2px;
+	transition: border 500ms ease;
 }
 
 .nav_links:hover {
-	background: rgb(209, 213, 219, 0.5);
+	border-bottom-color: var(--cyan-700);
 }
 
 .icon_size {
@@ -98,5 +104,8 @@
 	.show_nav {
 		transform: translateY(0);
 		top: 0;
+	}
+	.nav_links {
+		border: transparent;
 	}
 }

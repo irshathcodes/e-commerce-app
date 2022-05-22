@@ -30,4 +30,13 @@
 	color: var(--cyan-900);
 	padding: 0.5rem 1.5rem;
 	font-weight: 500;
+	transition: transform 300ms ease;
+}
+
+.btn_container > button:hover {
+	transform: scale(1.05);
+}
+
+.btn_container > button:active {
+	transform: scale(0.9);
 }

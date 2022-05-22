@@ -32,11 +32,20 @@
 	margin-top: 1rem;
 	margin-bottom: 5rem;
 	padding: 0.5rem 2rem;
-	background: var(--cyan-700);
+	background-color: var(--cyan-700);
 	border-radius: 0.375rem;
 	color: #fff;
 	text-transform: uppercase;
 	font-weight: 500;
+	transition: background-color 400ms ease;
+}
+
+.hero_container > button:hover {
+	background-color: var(--cyan-800);
+}
+
+.hero_container > button:active {
+	background-color: var(--cyan-600);
 }
 
 @media (max-width: 550px) {

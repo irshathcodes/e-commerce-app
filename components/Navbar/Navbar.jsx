@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import styles from "./Navbar.module.css";
+import styles from "./navbar.module.css";
 import classNames from "classnames/bind";
 import Image from "next/image";
 import Link from "next/link";
@@ -30,13 +30,15 @@ function Navbar() {
 	const cn = classNames.bind(styles);
 
 	useEffect(() => {
-		window.addEventListener("scroll", () => {
+		const navScrollListener = window.addEventListener("scroll", () => {
 			if (window.scrollY > 56) {
 				setChangeNavColor(true);
 			} else {
 				setChangeNavColor(false);
 			}
 		});
+
+		return () => window.removeEventListener("scroll", navScrollListener);
 	}, []);
 
 	return (
@@ -58,7 +60,12 @@ function Navbar() {
 							key={id}
 						>
 							<a>
-								<li className={cn("nav_links")}>{name}</li>
+								<li
+									className={cn("nav_links")}
+									onClick={() => setShowNav(false)}
+								>
+									{name}
+								</li>
 							</a>
 						</Link>
 					))}
