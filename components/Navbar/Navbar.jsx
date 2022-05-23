@@ -3,6 +3,7 @@ import styles from "./navbar.module.css";
 import classNames from "classnames/bind";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { ShoppingBagIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 
 const navLinks = [
@@ -26,6 +27,9 @@ const navLinks = [
 function Navbar() {
 	const [showNav, setShowNav] = useState(false);
 	const [changeNavColor, setChangeNavColor] = useState(false);
+	const [activeNavLink, setActiveNavLink] = useState(false);
+	const router = useRouter();
+	const { category } = router.query;
 
 	const cn = classNames.bind(styles);
 
@@ -61,7 +65,7 @@ function Navbar() {
 						>
 							<a>
 								<li
-									className={cn("nav_links")}
+									className={cn("nav_links", { active_nav: category === link })}
 									onClick={() => setShowNav(false)}
 								>
 									{name}

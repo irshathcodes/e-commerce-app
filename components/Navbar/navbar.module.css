@@ -53,6 +53,10 @@
 	border-bottom-color: var(--cyan-700);
 }
 
+.active_nav {
+	border-bottom-color: var(--cyan-700);
+}
+
 .icon_size {
 	width: 1.6rem;
 	height: 1.6rem;

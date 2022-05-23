@@ -1,7 +1,30 @@
+import React from "react";
+import { useRouter } from "next/router";
 import Card from "../../ui/Card";
 import styles from "./products.module.css";
 
+const sortOptions = [
+	{ id: 1, name: "All", query: "all" },
+	{ id: 2, name: "Recent", query: "-createdAt" },
+	{ id: 3, name: "Price(Lowest)", query: "price" },
+	{ id: 4, name: "Price(Highest)", query: "-price" },
+];
+
 function ProductList({ allProducts }) {
+	const router = useRouter();
+
+	const handleSortChange = (e) => {
+		const category = router.query.category;
+		const query = { sort: e.target.value };
+		if (category) query.category = category;
+
+		if (e.target.value === "all") router.push(router.pathname);
+
+		router.push({
+			pathname: router.pathname,
+			query,
+		});
+	};
 	return (
 		<>
 			<main className={styles.main}>
@@ -25,9 +48,18 @@ function ProductList({ allProducts }) {
 							Sort By
 						</label>
 					</div>
-					<select id="sort" className={styles.sort_dropdown}>
-						<option value="lowest">Price(Lowest)</option>
-						<option value="lowest">Price(Higher)</option>
+					<select
+						id="sort"
+						className={styles.sort_dropdown}
+						onChange={handleSortChange}
+					>
+						{sortOptions.map(({ id, name, query }) => {
+							return (
+								<React.Fragment key={id}>
+									<option value={query}>{name}</option>
+								</React.Fragment>
+							);
+						})}
 					</select>
 				</div>
 
