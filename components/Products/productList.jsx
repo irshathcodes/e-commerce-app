@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import { useRouter } from "next/router";
 import Card from "../../ui/Card";
 import styles from "./products.module.css";
@@ -10,7 +11,8 @@ const sortOptions = [
 	{ id: 4, name: "Price(Highest)", query: "-price" },
 ];
 
-function ProductList({ allProducts }) {
+function ProductList({ allProducts: data }) {
+	const [allProducts, setAllProducts] = useState(data);
 	const router = useRouter();
 
 	const handleSortChange = (e) => {
@@ -24,6 +26,10 @@ function ProductList({ allProducts }) {
 			pathname: router.pathname,
 			query,
 		});
+	};
+
+	const handleProductClick = (productId) => {
+		router.push(router.pathname + "/" + productId);
 	};
 	return (
 		<>
@@ -65,7 +71,11 @@ function ProductList({ allProducts }) {
 
 				<div className={styles.card_container}>
 					{allProducts.map((item) => (
-						<Card item={item} key={item._id} />
+						<Card
+							item={item}
+							key={item._id}
+							onClick={() => handleProductClick(item._id)}
+						/>
 					))}
 				</div>
 			</main>

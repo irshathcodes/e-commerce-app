@@ -1,10 +1,10 @@
 import styles from "./Card.module.css";
 import Image from "next/image";
 
-function Card({ item, className, attributes }) {
+function Card({ item, onClick }) {
 	return (
 		<>
-			<div className={`${styles.image_wrapper} ${className}`} {...attributes}>
+			<div className={styles.image_wrapper} onClick={onClick}>
 				<Image
 					className={styles.image}
 					src={item.productImage}
