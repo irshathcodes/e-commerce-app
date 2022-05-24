@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import { useRouter } from "next/router";
 import Card from "../../ui/Card";
 import styles from "./products.module.css";
@@ -11,8 +10,7 @@ const sortOptions = [
 	{ id: 4, name: "Price(Highest)", query: "-price" },
 ];
 
-function ProductList({ allProducts: data }) {
-	const [allProducts, setAllProducts] = useState(data);
+function ProductList({ allProducts }) {
 	const router = useRouter();
 
 	const handleSortChange = (e) => {
