@@ -1,4 +1,4 @@
-import ProductDetails from "../../components/Products/productDetails";
+import ProductDetails from "../../components/products/productDetails";
 
 function Product({ productDetails }) {
 	return <ProductDetails productDetails={productDetails} />;

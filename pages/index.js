@@ -1,7 +1,7 @@
-import Hero from "../components/Home/hero";
-import Intro from "../components/Home/Intro";
-import ProductsOverview from "../components/Home/ProductsOverview";
-import About from "../components/Home/About";
+import Hero from "../components/home/hero";
+import Intro from "../components/home/intro";
+import ProductsOverview from "../components/home/productsOverview";
+import About from "../components/home/about";
 
 export default function Home() {
 	return (

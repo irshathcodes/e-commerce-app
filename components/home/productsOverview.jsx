@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "./ProductsOverview.module.css";
+import styles from "./productsOverview.module.css";
 import Card from "../../ui/Card";
 import Link from "next/link";
 

@@ -233,6 +233,12 @@ summary {
 	display: list-item;
 }
 
+label,
+input,
+button {
+	display: block;
+}
+
 /*
 Removes the default spacing and border for appropriate elements.
 */
