@@ -23,17 +23,17 @@ function ProductDetails({ productDetails }) {
 				</div>
 
 				<div className={cn("details")}>
-					<h3 className={cn("name")}>{name}</h3>
-					<h6 className={cn("price")}>₹{price}</h6>
-					<p className={cn("description")}>{description}</p>
-					<label htmlFor="size" className={cn("size_label")}>
-						Size
-					</label>
-					<div className={cn("size_container")}>
-						{sizes.map((size, index) => {
-							return (
-								<React.Fragment key={index}>
-									<label htmlFor={size}>
+					<div>
+						<h3 className={cn("name")}>{name}</h3>
+						<h6 className={cn("price")}>₹{price}</h6>
+						<p className={cn("description")}>{description}</p>
+						<label htmlFor="size" className={cn("size_label")}>
+							Size
+						</label>
+						<div className={cn("size_container")}>
+							{sizes.map((size, index) => {
+								return (
+									<label htmlFor={size} key={index}>
 										<input
 											type="radio"
 											name="size"
@@ -43,9 +43,9 @@ function ProductDetails({ productDetails }) {
 										/>
 										<span className={cn("size_text")}>{size}</span>
 									</label>
-								</React.Fragment>
-							);
-						})}
+								);
+							})}
+						</div>
 					</div>
 
 					<button className={cn("add_btn")}>Add to bag</button>

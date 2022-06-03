@@ -37,6 +37,7 @@
 
 .size_label {
 	margin: 1rem 0;
+	font-weight: 500;
 }
 
 .size_container {
@@ -49,6 +50,7 @@
 	text-transform: uppercase;
 	cursor: pointer;
 	padding: 0.4rem 0.8rem;
+	border: 1px solid var(--gray-200);
 	border-radius: 0.4rem;
 	transition: box-shadow 200ms ease;
 }
@@ -62,6 +64,10 @@
 
 .radio:checked + .size_text {
 	box-shadow: var(--cyan-600) 0px 1px 4px, var(--cyan-600) 0px 0px 0px 3px;
+}
+
+.size_text:hover {
+	box-shadow: var(--gray-200) 0px 1px 4px, var(--gray-200) 0px 0px 0px 3px;
 }
 
 .add_btn {
@@ -82,4 +88,46 @@
 
 .add_btn:active {
 	background-color: var(--cyan-600);
+}
+
+@media (min-width: 700px) {
+	.product {
+		flex-direction: row;
+		justify-content: center;
+		gap: 2.5rem;
+		margin: 3rem 1rem;
+	}
+	.image_wrapper {
+		align-self: flex-start;
+		width: 350px;
+		height: 400px;
+	}
+
+	.details {
+		height: 400px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	.name {
+		font-size: 1.3rem;
+	}
+	.price {
+		font-size: 1.1rem;
+		font-weight: 500;
+	}
+	.description {
+		width: 400px;
+	}
+	.size_label {
+		margin-top: 2rem;
+	}
+
+	.name {
+		padding-top: 0;
+		padding-left: 0;
+	}
+	.add_btn {
+		margin: 0;
+	}
 }
